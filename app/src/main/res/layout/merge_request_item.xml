@@ -16,13 +16,13 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/dimen_16"
         android:animateLayoutChanges="true"
-        android:minHeight="@dimen/dimen_64"
+        android:minHeight="@dimen/dimen_100"
         android:paddingHorizontal="@dimen/dimen_8">
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/user_profile_image"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="@dimen/dimen_100"
+            android:layout_height="@dimen/dimen_100"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@mipmap/ic_launcher" />
