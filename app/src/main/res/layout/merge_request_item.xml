@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="closedMr"
+            type="com.example.githubdomain.IClosedMr" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/dimen_16"
+        android:animateLayoutChanges="true"
+        android:minHeight="@dimen/dimen_64"
+        android:paddingHorizontal="@dimen/dimen_8">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/user_profile_image"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@mipmap/ic_launcher" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/mr_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_8"
+            android:maxLines="2"
+            android:text="@{closedMr.mrTitle}"
+            android:textSize="@dimen/size_16"
+            app:layout_constraintStart_toEndOf="@id/user_profile_image"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Issue in Building" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/mr_user_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_8"
+            android:maxLines="1"
+            android:text="@string/author"
+            android:textSize="@dimen/size_12"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@id/mr_title"
+            app:layout_constraintTop_toBottomOf="@id/mr_title" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/mr_user"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_8"
+            android:maxLines="1"
+            android:text="@{closedMr.userData.userName}"
+            android:textSize="@dimen/size_12"
+            app:layout_constraintStart_toEndOf="@id/mr_user_title"
+            app:layout_constraintTop_toTopOf="@id/mr_user_title"
+            tools:text="By DroidDevs" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/mr_created_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_8"
+            android:maxLines="1"
+            android:text="@string/created_at"
+            android:textSize="@dimen/size_12"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@id/mr_user_title"
+            app:layout_constraintTop_toBottomOf="@id/mr_user_title" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/mr_created_At"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_8"
+            android:text="@{closedMr.createdAt}"
+            android:textSize="@dimen/size_12"
+            app:layout_constraintStart_toEndOf="@id/mr_created_title"
+            app:layout_constraintTop_toTopOf="@id/mr_created_title"
+            tools:text="By DroidDevs" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/mr_closed_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_8"
+            android:maxLines="1"
+            android:text="@string/closed_at"
+            android:textSize="@dimen/size_12"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@id/mr_created_title"
+            app:layout_constraintTop_toBottomOf="@id/mr_created_title" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/mr_closed_At"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_8"
+            android:text="@{closedMr.closedAt}"
+            android:textSize="@dimen/size_12"
+            app:layout_constraintStart_toEndOf="@id/mr_closed_title"
+            app:layout_constraintTop_toTopOf="@id/mr_closed_title"
+            tools:text="By DroidDevs" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
