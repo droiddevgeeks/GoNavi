@@ -10,4 +10,8 @@ sealed class Result<out E, out R> where R : Any? {
             is Success -> result.invoke(successVal)
         }
     }
+
+    //For UT
+    fun errorValue() = if (this is Error) errorVal else null
+    fun successValue() = if (this is Success) successVal else null
 }
