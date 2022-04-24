@@ -7,17 +7,6 @@ plugins {
 
 android {
     compileSdk 31
-
-    defaultConfig {
-
-        minSdk 23
-        targetSdk 31
-        versionCode 1
-        versionName "1.0"
-
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-    }
-
     buildTypes {
         release {
             minifyEnabled false
@@ -35,16 +24,21 @@ android {
 
 dependencies {
 
-    implementation 'androidx.core:core-ktx:1.7.0'
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$project.kotlinxCoroutinesVersion"
-    implementation 'androidx.appcompat:appcompat:1.4.1'
-    implementation 'com.google.android.material:material:1.5.0'
-    testImplementation 'junit:junit:4.13.2'
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$project.kotlinx_coroutines_version"
+    implementation "androidx.core:core-ktx:$project.androidx_core_ktx_version"
 
     implementation project(':githubdomain')
     implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
     implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
-    implementation 'com.squareup.okhttp3:okhttp:4.9.3'
+    implementation "com.squareup.okhttp3:okhttp:$okhttp_version"
     implementation "com.google.dagger:hilt-android:$hilt_version"
     kapt "com.google.dagger:hilt-android-compiler:$hilt_version"
+
+    //UT
+    testImplementation "org.junit.jupiter:junit-jupiter-api:$project.junit_jupiter"
+    testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:$project.junit_jupiter"
+    testImplementation "com.nhaarman.mockitokotlin2:mockito-kotlin:$project.mockitokotlin2"
+    testImplementation "org.mockito:mockito-core:$project.mockito_core"
+    testImplementation "org.mockito:mockito-inline:$project.mockito_inline"
+    testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:$project.kotlin_coroutine_test"
 }
